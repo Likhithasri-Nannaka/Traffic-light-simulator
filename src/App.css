@@ -1,0 +1,148 @@
+/* src/App.css or src/styles/trafficLight.css */
+
+/* Global Styles */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Adjust for full viewport */
+    background-color: #f5f5f5; /* Light background */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Traffic Light System */
+  .traffic-light-system {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px; /* Space between the light and the buttons */
+  }
+  
+  .traffic-light {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 80px; /* Make the width flexible for different screens */
+    height: 200px; /* Adjust height */
+    background-color: #333;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .light {
+    width: 50px; /* Adjust for smaller screens */
+    height: 50px;
+    border-radius: 50%;
+    background-color: #666;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .green.active {
+    background-color: #00FF00;
+    box-shadow: 0 0 10px 3px #00FF00;
+  }
+  
+  .yellow.active {
+    background-color: #FFFF00;
+    box-shadow: 0 0 10px 3px #FFFF00;
+  }
+  
+  .red.active {
+    background-color: #FF0000;
+    box-shadow: 0 0 10px 3px #FF0000;
+  }
+  
+  /* Time Remaining */
+  .time-remaining {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between buttons */
+  }
+  
+  /* Pedestrian Button */
+  .pedestrian-button, .emergency-button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width for buttons */
+    max-width: 300px; /* Limit the max width for larger screens */
+  }
+  
+  .pedestrian-button {
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .pedestrian-button:hover {
+    background-color: #333;
+  }
+  
+  .emergency-button {
+    background-color: red;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+  }
+  
+  .emergency-button:hover {
+    background-color: darkred;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media only screen and (max-width: 768px) {
+    /* For tablets and small screens */
+    .traffic-light {
+      width: 60px;
+      height: 150px;
+    }
+  
+    .light {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .pedestrian-button, .emergency-button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  
+    .time-remaining {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    /* For mobile screens */
+    .traffic-light {
+      width: 50px;
+      height: 120px;
+    }
+  
+    .light {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .pedestrian-button, .emergency-button {
+      font-size: 14px;
+      padding: 8px 16px;
+      max-width: 90%; /* Take up most of the width on small screens */
+    }
+  
+    .time-remaining {
+      font-size: 12px;
+    }
+  }
+  
